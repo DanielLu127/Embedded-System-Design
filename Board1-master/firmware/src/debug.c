@@ -24,7 +24,6 @@ void dbgOutputVal(unsigned int outVal) {
     if (outVal > MAX_OUTPUT_VALUE)
         dbgOutputVal(DBG_GREATER_THAN_127);
     uint32_t preValue = PLIB_PORTS_Read(PORTS_ID_0, PORT_CHANNEL_D) & WRITE_8_BIT_END_MASK;
-    PLIB_PORTS_Write(PORTS_ID_0, PORT_CHANNEL_D, preValue | outVal);
     PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_7);
 }
 
